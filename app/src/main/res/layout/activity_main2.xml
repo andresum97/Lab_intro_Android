@@ -7,10 +7,38 @@
     tools:context="com.example.alber.primer_proyecto.Main2Activity">
 
     <TextView
-        android:id="@+id/nombreHeroe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_width="159dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="12dp"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="150dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        tools:layout_editor_absoluteX="41dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="162dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="396dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="41dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="161dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        tools:layout_editor_absoluteX="41dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="162dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="292dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="41dp" />
 </android.support.constraint.ConstraintLayout>

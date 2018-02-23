@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
@@ -23,7 +24,11 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     ListView listView; //Objeto ListView
-    private String[] items = new String[]{"Iron Man","Spider Man","Captain America","Thor","Hulk","Vision","Black Panther"}; //Array de string a mostrar
+     //private String[] items = new String[]{"Iron Man","Spider Man","Captain America","Thor","Hulk","Vision","Black Panther"}; //Array de string a mostrar
+    //private ArrayList<Persona> personas;
+     private Contacto[] contactos = new Contacto[3];
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         listView = (ListView) findViewById(R.id.Lista);
         //Urilizacion del adaptar
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,items);
+        ArrayAdapter<Contacto> adapter = new ArrayAdapter<Contacto>(this,android.R.layout.simple_expandable_list_item_1,contactos);
         listView.setAdapter(adapter);
         Intent intent = new Intent(MainActivity.this, Main2Activity.class);
         startActivity(intent);
@@ -43,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
-                String heroe;
-                heroe=(String) listView.getItemAtPosition(i);
+                String p;
+                p=(String) listView.getItemAtPosition(i);
                 intent= new Intent(view.getContext(),Main2Activity.class);
-                intent.putExtra("heroes",heroe);
+                intent.putExtra("persona",p);
                 startActivity(intent);
             }
         });
@@ -59,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
